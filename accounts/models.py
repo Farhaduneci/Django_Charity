@@ -1,9 +1,15 @@
 from django.contrib.auth.models import AbstractUser
+from django.db import models
 
 
 class User(AbstractUser):
-    # User model codes you've written in `Models` problem
-    # You can copy/paste your codes from that problem here
-    # Remember that they will be ignored and they have no
-    # effect on judgement process.
-    ...
+    GENDER_CHOICES = (
+        ("M", "Male"),
+        ("F", "Female"),
+    )
+
+    gender = models.CharField(choices=GENDER_CHOICES, max_length=1, blank=True, null=True)
+    phone = models.CharField(max_length=15, blank=True, null=True)
+    age = models.PositiveSmallIntegerField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    address = models.TextField(null=True, blank=True)
