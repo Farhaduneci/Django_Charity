@@ -24,8 +24,8 @@ class UserAdmin(DefaultUserAdmin):
         ('Personal info', {
             'fields': ('first_name', 'last_name', 'email', 'gender', 'age', 'description',)
         }),
-        ('Contact Info', {
-            'fields': ("phone", "address")
+        ('Contact info', {
+            'fields': ("phone", "address",)
         }),
         ('Permissions', {
             'fields': (
